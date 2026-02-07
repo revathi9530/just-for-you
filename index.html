@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Just for you</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #intro {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    #introText {
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    #playBtn {
+      font-size: 20px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    video {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="intro">
+    <div id="introText">Just for you 🤍</div>
+    <button id="playBtn">Click here</button>
+  </div>
+
+  <video id="video"  playsinline controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("video");
+    const btn = document.getElementById("playBtn");
+
+    btn.addEventListener("click", () => {
+      intro.style.display = "none";
+      video.style.display = "block";
+      video.play();
+    });
+  </script>
+
+</body>
+</html>
